@@ -28,7 +28,7 @@ model Book {
   id          String     @id // ID dari Google Books API
   title       String
   authors     String?
-  thumbnail   String?
+  thumbnail   String?    @db.Text
   description String?    @db.Text
   createdAt   DateTime
   updatedAt   DateTime   @updatedAt
