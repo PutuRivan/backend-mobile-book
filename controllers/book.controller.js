@@ -165,7 +165,7 @@ async function getFavoriteBook(req, res) {
 }
 
 async function deleteFavoriteBook(req, res) {
-  const { userId, bookId } = req.body; // bisa juga dari req.params kalau mau
+  const { userId, bookId } = req.params; // bisa juga dari req.params kalau mau
 
   try {
     // Cek apakah favorite ini ada
