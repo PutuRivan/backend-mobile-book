@@ -226,7 +226,7 @@ async function addReviewByBookId(req, res) {
   try {
     const { bookId, userId } = req.params;
     const { title, authors, thumbnail, description, comment } = req.body;
-
+    
     // Handle jika authors, thumbnail, description null/undefined
     const safeAuthors = authors ?? 'Unknown Author';
     const safeThumbnail = thumbnail ?? 'https://via.placeholder.com/150'; // placeholder gambar default
@@ -250,6 +250,8 @@ async function addReviewByBookId(req, res) {
         }
       });
     }
+
+    console.log(book);
 
     const newReview = await prisma.review.create({
       data: {
@@ -322,6 +324,7 @@ async function deleteReviewByUser(req, res) {
     })
   }
 }
+
 module.exports = {
   getAllBooks,
   getBookDetail,
